@@ -51,38 +51,41 @@
 
 .nav-links a,
 .dropdown-toggle {
+  position: relative;
   text-decoration: none;
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
-  padding: 6px 10px;
+  padding: 6px 2px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.nav-links a.active,
-.nav-links a:hover,
-.dropdown-toggle:hover {
-  color: #ff80ab;
-}
-
-/* Underline Animation */
+/* 🔥 Underline Animation (only under text) */
 .nav-links a::after,
 .dropdown-toggle::after {
   content: "";
   position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #ff80ab;
   left: 50%;
   bottom: -3px;
-  transition: 0.3s ease-in-out;
+  width: 0;
+  height: 2px;
+  background-color: #ff80ab;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
 }
 
+/* On hover or active link */
 .nav-links a:hover::after,
+.nav-links a.active::after,
 .dropdown-toggle:hover::after {
   width: 100%;
-  left: 0;
+}
+
+/* Text color hover */
+.nav-links a:hover,
+.dropdown-toggle:hover {
+  color: #ff80ab;
 }
 
 /* Dropdown */
@@ -192,3 +195,4 @@
     color: #ff4081;
   }
 }
+

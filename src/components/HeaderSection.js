@@ -34,6 +34,9 @@ const HeaderSection = () => {
         const bData = bSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         const cData = cSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
+        console.log("🔍 Fetched banners:", bData); // ← ADD THIS
+        console.log("🔍 Banner image URLs:", bData.map(b => b.imageUrl));
+
         setBanners(bData);
         setCategories(cData);
       } catch (err) {
@@ -43,6 +46,8 @@ const HeaderSection = () => {
 
     fetchData();
   }, []);
+
+
 
   // Rotate banners every 5 seconds
   useEffect(() => {

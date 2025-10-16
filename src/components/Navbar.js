@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
-import logo from "../assets/logo.jpg"; // gift shop logo
+import logo from "../assets/images/logo.jpg"; // gift shop logo
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -63,8 +63,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/cakes" onClick={closeMenu}>
-                Cakes
+              <Link to="/frames" onClick={closeMenu}>
+                Frames  
               </Link>
             </li>
           </ul>
